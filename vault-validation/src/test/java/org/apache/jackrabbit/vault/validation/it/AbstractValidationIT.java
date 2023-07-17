@@ -104,7 +104,7 @@ public abstract class AbstractValidationIT {
         }
         String topLevelFolderName = file.getName(rootPathLevel).toString();
         final boolean isMetaInf;
-        final Path basePath = file.subpath(0, rootPathLevel+1);
+        final Path basePath = Paths.get("/", file.subpath(0, rootPathLevel + 1).toString());
         final Path relativeFilePath = file.subpath(rootPathLevel + 1, file.getNameCount());
         if (topLevelFolderName.equals(Constants.META_INF)) {
             isMetaInf = true;
